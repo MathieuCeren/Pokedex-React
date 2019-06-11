@@ -23,16 +23,30 @@ class App extends React.Component {
     const api_call = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     const data = await api_call.json();
     console.log(data);
-    this.setState({
-      name: data.name,
-      experience: data.base_experience,
-      height: data.height,
-      weight: data.weight,
-      id: data.id,
-      sprites: data.sprites.back_default,
-      img_url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${data.id}.png`,
-      error: undefined,
-    });
+    if (pokemon)
+    {
+      this.setState({
+        name: data.name,
+        experience: data.base_experience,
+        height: data.height,
+        weight: data.weight,
+        id: data.id,
+        sprites: data.sprites.back_default,
+        img_url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${data.id}.png`,
+        error: "",
+      });
+    } else {
+      this.setState({
+        name: undefined,
+        experience: undefined,
+        height: undefined,
+        weight: undefined,
+        id: undefined,
+        sprites: undefined,
+        img_url: undefined,
+        error: "Please enter a valid pokemon name",
+      });
+    }
   }
 
   render () { 
