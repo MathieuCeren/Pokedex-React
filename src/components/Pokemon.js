@@ -31,8 +31,13 @@ class Pokemon extends React.Component {
 						</p>
 					}
 					{
+						this.props.abilities && <p>Abilities:
+						<span> {this.props.abilities}</span>
+						</p>
+					}
+					{
 						this.props.img_url && <p> 
-						<span><img src={this.props.img_url}/></span>
+						<span><img src={this.props.img_url} alt="pokemon sprites"/></span>
 						</p>
 					}
 					{
