@@ -11,8 +11,8 @@ class App extends React.Component {
       height: undefined,
       weight: undefined,
       id: undefined,
-      abilities: undefined,
       img_url: undefined,
+      stats: undefined,
       error: undefined,
     }
 
@@ -31,11 +31,8 @@ class App extends React.Component {
         height: data.height,
         weight: data.weight,
         id: data.id,
-        abilities: data.abilities.map((abi, index)=> {
-          return ([<li key={abi}>{}, {index.slot}</li>]);
-        }),
         img_url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`,
-        error: "",
+        error: " ",
       });
     } else {
       this.setState({
@@ -44,8 +41,8 @@ class App extends React.Component {
         height: undefined,
         weight: undefined,
         id: undefined,
-        abilities: undefined,
         img_url: undefined,
+        stats: undefined,
         error: "Please enter a valid pokemon name",
       });
     }
@@ -62,8 +59,8 @@ class App extends React.Component {
         height={this.state.height}
         weight={this.state.weight}
         id={this.state.id}
-        abilities={this.state.abilities}
         img_url={this.state.img_url}
+        stats={this.state.stats}
         error={this.state.error}
         />
       </div>

@@ -3,46 +3,45 @@ import React from "react";
 class Pokemon extends React.Component {
 	render() {
 		return (
-			<div>
-				<h1>PokePoke</h1>
+			<div className="card">
 					{
-						this.props.name && <p>Pokemon name: 
-						<span> {this.props.name}</span>
+						this.props.img_url && <p className="container"> 
+						<span><img src={this.props.img_url} alt="pokemon sprites" className="sprites"/></span>
 						</p>
 					}
 					{
-						this.props.id && <p>Pokemon id:
-						<span> {this.props.id}</span>
+						this.props.name && <p className="container">Pokemon name: 
+						<span className="value"> {this.props.name}</span>
 						</p>
 					}
 					{
-						this.props.experience && <p>Experience:
-						<span> {this.props.experience} </span>
+						this.props.id && <p className="container">Pokemon id:
+						<span className="value"> {this.props.id}</span>
 						</p>
 					}
 					{
-						this.props.height && <p>Height: 
-						<span> {this.props.height}</span>
+						this.props.experience && <p className="container">Experience:
+						<span className="value"> {this.props.experience} </span>
 						</p>
 					}
 					{
-						this.props.weight && <p>Weight:
-						<span> {this.props.weight}</span>
+						this.props.height && <p className="container">Height: 
+						<span className="value"> {this.props.height}</span>
 						</p>
 					}
 					{
-						this.props.abilities && <p>Abilities:
-						<span> {this.props.abilities}</span>
+						this.props.weight && <p className="container">Weight:
+						<span className="value"> {this.props.weight}</span>
 						</p>
 					}
 					{
-						this.props.img_url && <p> 
-						<span><img src={this.props.img_url} alt="pokemon sprites"/></span>
+						this.props.stats && <p className="container">Stats:
+						<span className="value"> {this.props.stats}</span>
 						</p>
 					}
 					{
-						this.props.error && <p>
-						<span>{this.props.error}</span>
+						this.props.error && <p className="container">
+						<span className="value">{this.props.error}</span>
 						</p>
 					}
 
