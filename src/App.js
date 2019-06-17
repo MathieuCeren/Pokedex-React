@@ -52,7 +52,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Form getStats={this.getStats}/>
+        <Form 
+        getStats={this.getStats}
+        />
         <Pokemon 
         name={this.state.name}
         experience={this.state.experience}

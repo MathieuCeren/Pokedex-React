@@ -4,7 +4,7 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1 className="header">Pokedex</h1>
+				<h1 className="header">Pokedex using PokeAPI.co</h1>
 			</div>
 		);
 	}
